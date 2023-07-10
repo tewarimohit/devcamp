@@ -21,6 +21,10 @@ connectDB();
 
 const app = express();
 
+// Body Parser
+
+app.use(express.json());
+
 // custom logger
 // app.use(logger);
 
