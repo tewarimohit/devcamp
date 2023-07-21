@@ -4,10 +4,12 @@ const morgan = require("morgan");
 const colors = require("colors");
 const errorHandler = require("./middleware/error.js");
 const connectDB = require("./config/db");
+const Bootcamp = require("./models/Bootcamp.js");
 
 // Route files
 
 const bootcamp = require("./routes/Bootcamp.js");
+const courses = require("./routes/Courses.js");
 
 // Logger
 
@@ -38,6 +40,7 @@ if (process.env.NODE_ENV === "development") {
 // Mount routes
 
 app.use("/api/v1/bootcamps", bootcamp);
+app.use("/api/v1/courses", courses);
 
 // error handler
 
